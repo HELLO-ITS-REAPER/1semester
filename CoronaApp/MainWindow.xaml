@@ -6,19 +6,42 @@
         xmlns:local="clr-namespace:CoronaApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1138"
-        ResizeMode="NoResize">
-    <Grid Margin="0,20,0,0">
+        ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
         <Image Source="/Coronavirus.jpg" Width="430" Height="89.5"
-               HorizontalAlignment="Left" VerticalAlignment="Top"/>
+               HorizontalAlignment="Left" VerticalAlignment="Top"
+               RenderOptions.BitmapScalingMode="HighQuality"/>
+
         <TextBox Name="FileLocation" Height="70" Width="730" 
                  Margin="0,150,300,500" FontSize="34" IsReadOnly="True"
                  VerticalContentAlignment="Center" Foreground="#747474"/>
-        <Button Name="SelectFile" Content="Vælg Fil" Width="180" Height="70" 
-                Margin="800,0,0,350" Background="#B22931" 
-                Foreground="White" FontSize="34"/>
+
         <Rectangle Width="1138" Height="10" 
                    Fill="#B22931" VerticalAlignment="Bottom"/>
-        <ComboBox Height="32" Width="140" Margin="75,300,900,400" 
-                  Background="White" ItemsSource="{Binding municipalityNames}"/>
+
+        <ComboBox Height="44" Width="358" Margin="0,0,650,0" 
+                  FontSize="24" ItemsSource="{Binding municipalityNames}"/>
+
+        <!--Buttons-->
+        <Button Name="ButtonClose" Click="ButtonClose_Click" 
+                Content="X" FontSize="18" Foreground="white" 
+                HorizontalAlignment="Left" Margin="1074,10,0,0" 
+                VerticalAlignment="Top" Background="#B22931" 
+                Width="54" Height="35" Cursor="Hand"/>
+        
+        <Button Name="Minimized" Click="Minimized_Click" Content="-" 
+                FontSize="18" Foreground="white" HorizontalAlignment="Left" 
+                Margin="1013,10,0,0" VerticalAlignment="Top" 
+                Background="#B22931" Width="54" Height="35" Cursor="Hand"/>
+        
+        <Button Name="SelectFileButton" Content="Vælg Fil" Width="180" Height="70" 
+                Margin="800,0,0,350" Background="#B22931" 
+                Foreground="White" FontSize="34" Click="SelectFileButton_Click"
+                Cursor="Hand"/>
+        
+        <Button Name="ToDataPage" Content="Færdig" Width="180" Height="70" 
+                Margin="800,500,0,0" Background="#B22931" 
+                Foreground="White" FontSize="34" Click="ToDataPage_Click"
+                Cursor="Hand"/>
     </Grid>
 </Window>
