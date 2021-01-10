@@ -48,7 +48,9 @@ namespace CoronaApp
 
         private void ToDataPage_Click(object sender, RoutedEventArgs e)
         {
-            // Sender brugeren til den næste side. 
+            DataPage dataPage = new DataPage();
+            dataPage.Show();
+            this.Close();
         }
 
         private void Minimized_Click(object sender, RoutedEventArgs e)
