@@ -6,4 +6,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="coronavirus.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="coronavirus.jpg" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="CoronaApp.DataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CoronaApp"
+      mc:Ignorable="d" 
+      Height="800" Width="1138" Background="White" 
+      Title="DataPage" WindowStyle="None" ResizeMode="CanMinimize">
+
+    <Grid>
+        <Button Name="ButtonClose" Click="CloseButton_Click" Content="X" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1074,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
+        <Button x:Name="Minimized" Click="Minimized_Click" Content="-" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1013,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
+        <Image Source="/coronavirus.jpg" Width="430" Height="89.5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <TextBox HorizontalAlignment="Left" Margin="29,147,0,0" x:Name="KommuneNavnText" IsReadOnly="True" Text="Kommune navn" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" FontSize="36" Foreground="#B22931" BorderThickness="0" />
+
+        <Rectangle Width="1138" Height="10" 
+                   Fill="#B22931" VerticalAlignment="Bottom"/>
+        <Button Content="Tilbage" HorizontalAlignment="Left" Margin="716,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180" FontSize="28" />
+        <Button Content="Anbefalinger"  HorizontalAlignment="Left" Margin="926,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180"  FontSize="28"/>
+        <Label HorizontalAlignment="Left" Margin="29,264,0,0"  Content="Antal testede"  VerticalAlignment="Top" Width="186" FontSize="28" Foreground="#B22931" />
+        <Label HorizontalAlignment="Left" Margin="262,269,0,0" Content="Antal Bekræftede"  VerticalAlignment="Top" Width="234" FontSize="28" Foreground="#B22931"/>
+        <Label HorizontalAlignment="Left" Margin="575,269,0,0" Content="Befolkningstal"  VerticalAlignment="Top" Width="186" FontSize="28" Foreground="#B22931"/>
+        <Label HorizontalAlignment="Left" Margin="866,269,0,0" Content="Kumulative tilfælde"  VerticalAlignment="Top" Width="248" FontSize="28" Foreground="#B22931"/>
+        <Label HorizontalAlignment="Left" Margin="29,214,0,0" Content="Dagens tal"  VerticalAlignment="Top" Width="162"  FontSize="30" Foreground="#B22931"/>
+        <Label HorizontalAlignment="Left" Margin="29,491,0,0" Content="Tidligere datoer"  VerticalAlignment="Top" Width="204"  FontSize="28" Foreground="#747474"/>
+        <DataGrid Margin="259,402,101,186"/>
+        <TextBox HorizontalAlignment="Left" x:Name="TestedeText" IsReadOnly="True" Margin="29,321,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="28" Foreground="#747474" BorderThickness="0"/>
+        <TextBox HorizontalAlignment="Left" x:Name="BekræftedeText" IsReadOnly="True" Margin="259,321,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="28" Foreground="#747474" BorderThickness="0"/>
+        <TextBox HorizontalAlignment="Left" x:Name="BefolningstalText" IsReadOnly="True" Margin="575,321,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="28" Foreground="#747474" BorderThickness="0"/>
+        <TextBox HorizontalAlignment="Left" x:Name="KunulativeText" IsReadOnly="True" Margin="866,321,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="28" Foreground="#747474" BorderThickness="0"/>
+
+
+    </Grid>
+</Window>
