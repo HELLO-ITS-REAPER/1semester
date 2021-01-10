@@ -37,5 +37,19 @@ namespace CoronaApp
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void TilbageButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void AnbefalingerButton_Click(object sender, RoutedEventArgs e)
+        {
+            message message = new message();
+            message.Show();
+            this.Close();
+        }
     }
 }
