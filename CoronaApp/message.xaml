@@ -10,7 +10,7 @@
     <Grid>
         <Button Name="ButtonClose" Click="CloseButton_Click" Content="X" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1074,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
         <Button x:Name="Minimized" Click="Minimized_Click" Content="-" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1013,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
-        <Image Source="/coronavirus.jpg" Width="430" Height="89.5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image Source="/Coronavirus.jpg" Width="430" Height="89.5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label HorizontalAlignment="Left" Margin="29,214,0,0" Content="Dagens tal"  VerticalAlignment="Top" Width="162"  FontSize="30" Foreground="#B22931"/>
 
 
