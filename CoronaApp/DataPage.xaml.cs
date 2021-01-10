@@ -18,9 +18,12 @@ namespace CoronaApp
     /// </summary>
     public partial class DataPage : Window
     {
+       
         public DataPage()
         {
             InitializeComponent();
+           
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -37,5 +40,7 @@ namespace CoronaApp
         {
             this.WindowState = WindowState.Minimized;
         }
+
+       
     }
 }

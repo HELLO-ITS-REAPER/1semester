@@ -13,7 +13,7 @@
         <Button x:Name="Minimized" Click="Minimized_Click" Content="-" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1013,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
         <Image Source="/Coronavirus.jpg" Width="430" Height="89.5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="29,147,0,0" x:Name="KommuneNavnText" IsReadOnly="True" Text="Kommune navn" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" FontSize="36" Foreground="#B22931" BorderThickness="0" />
+        <TextBox HorizontalAlignment="Left" Margin="29,147,0,0" x:Name="KommuneNavnText" IsReadOnly="True" Text="kommune" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" FontSize="36" Foreground="#B22931" BorderThickness="0" />
 
         <Rectangle Width="1138" Height="10" 
                    Fill="#B22931" VerticalAlignment="Bottom"/>

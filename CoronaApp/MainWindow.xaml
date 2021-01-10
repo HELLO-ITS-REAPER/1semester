@@ -19,7 +19,7 @@
         <Rectangle Width="1138" Height="10" 
                    Fill="#B22931" VerticalAlignment="Bottom"/>
 
-        <ComboBox Height="44" Width="358" Margin="0,0,650,0" 
+        <ComboBox  SelectedIndex="1" Height="44" Width="358" Margin="0,0,650,0" 
                   FontSize="24" ItemsSource="{Binding municipalityNames}"/>
 
         <!--Buttons-->

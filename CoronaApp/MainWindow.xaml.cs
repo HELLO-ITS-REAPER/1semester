@@ -18,6 +18,7 @@ namespace CoronaApp
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public string[] municipalityNames { get; set; }
         public MainWindow()
         {
@@ -62,5 +63,7 @@ namespace CoronaApp
         {
             Close();
         }
+
+       
     }
 }
