@@ -61,7 +61,9 @@
                Content="Tidligere datoer"  VerticalAlignment="Top" Width="205" 
                FontSize="28" Foreground="#747474"/>
         
-        <DataGrid Margin="259,402,101,186"/>
+        <DataGrid Margin="259,402,101,186" IsSynchronizedWithCurrentItem="True"
+                  AutoGenerateColumns="True" HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch" Name="OldData"/>
         
         <!--TextBoxes-->
         <TextBox HorizontalAlignment="Left" Margin="29,147,0,0" 

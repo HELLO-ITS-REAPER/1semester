@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Configuration;
 using System.Windows;
+using System.Data.SqlClient;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
