@@ -11,11 +11,11 @@
         <Button Name="ButtonClose" Click="CloseButton_Click" Content="X" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1074,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
         <Button x:Name="Minimized" Click="Minimized_Click" Content="-" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1013,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
         <Image Source="/Coronavirus.jpg" Width="430" Height="89.5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label HorizontalAlignment="Left" Margin="62,214,0,0" Content="Anbefalinger" FontWeight="Bold" VerticalAlignment="Top" Width="200"  FontSize="30" Foreground="#B22931"/>
+        <Label HorizontalAlignment="Left" Margin="29,214,0,0" Content="Dagens tal"  VerticalAlignment="Top" Width="162"  FontSize="30" Foreground="#B22931"/>
 
 
-        <Button Name="TilbageButton" Content="Annuller" HorizontalAlignment="Left" Margin="716,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180" FontSize="28" Click="TilbageButton_Click" />
-        <Button Name="AnvendButton" Content="Godkend" HorizontalAlignment="Left" Margin="926,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180"  FontSize="28" Click="AnvendButton_Click"/>
+        <Button Content="Tilbage" HorizontalAlignment="Left" Margin="716,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180" FontSize="28" />
+        <Button Content="Anbefalinger" HorizontalAlignment="Left" Margin="926,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180"  FontSize="28"/>
         <ListView Margin="62,288,445,179">
             <ListView.View>
                 <GridView>
@@ -23,5 +23,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
     </Grid>
 </Window>

@@ -31,23 +31,6 @@ namespace CoronaApp
         {
             this.WindowState = WindowState.Minimized;
         }
-
-        private void TilbageButton_Click(object sender, RoutedEventArgs e)
-        {
-            DataPage dataPage = new DataPage();
-            dataPage.Show();
-            this.Close();
-        }
-
-        private void AnvendButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Indsæt anvendelses code her, så der bliver filtreret for smittede kommuner.
-
-
-            DataPage dataPage = new DataPage();
-            dataPage.Show();
-            this.Close();
-        }
     }
 
 
