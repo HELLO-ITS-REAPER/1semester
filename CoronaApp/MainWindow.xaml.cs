@@ -18,7 +18,7 @@ namespace CoronaApp
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+
         public string[] municipalityNames { get; set; }
         public MainWindow()
         {
@@ -46,13 +46,7 @@ namespace CoronaApp
                 FileLocation.Text = openFileDialog.FileName;
             }
         }
-
-        private void ToDataPage_Click(object sender, RoutedEventArgs e)
-        {
-            DataPage dataPage = new DataPage();
-            dataPage.Show();
-            this.Close();
-        }
+        
 
         private void Minimized_Click(object sender, RoutedEventArgs e)
         {
@@ -64,6 +58,29 @@ namespace CoronaApp
             Close();
         }
 
-       
+
+        private void ToDataPage_Click(object sender, RoutedEventArgs e)
+        {
+            string transfer;
+            transfer = this.Kommune.Text;
+            if (transfer != null)
+            {
+                DataPage dataPage = new DataPage();
+                dataPage.MyVal = transfer;
+                dataPage.Show();
+
+            }
+            else
+            {
+                DataPage dataPage = new DataPage();
+                dataPage.Show();
+            }
+            this.Close();
+
+        }
+    
+
+        
+
     }
 }
