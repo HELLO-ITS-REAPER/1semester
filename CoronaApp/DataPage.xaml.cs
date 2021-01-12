@@ -63,8 +63,17 @@ namespace CoronaApp
         private async void ShowKommune()
         {
             await System.Threading.Tasks.Task.Delay(100);
-            KommuneNavnText.Clear();
-            this.KommuneNavnText.Text += myVal;
+            if (MyVal == "")
+            {
+                KommuneNavnText.Clear();
+                this.KommuneNavnText.Text = "ingen Kommune valgt";
+            }
+            else
+            {
+                KommuneNavnText.Clear();
+
+                this.KommuneNavnText.Text += myVal;
+            }
         }
     }
 }
