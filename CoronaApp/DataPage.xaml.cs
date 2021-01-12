@@ -21,6 +21,7 @@ namespace CoronaApp
         public DataPage()
         {
             InitializeComponent();
+            ShowKommune();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -50,6 +51,20 @@ namespace CoronaApp
             message message = new message();
             message.Show();
             this.Close();
+        }
+
+        private string myVal;
+        public string MyVal
+        {
+            get { return myVal; }
+            set { myVal = value; }
+
+        }
+        private async void ShowKommune()
+        {
+            await System.Threading.Tasks.Task.Delay(100);
+            KommuneNavnText.Clear();
+            this.KommuneNavnText.Text += myVal;
         }
     }
 }
