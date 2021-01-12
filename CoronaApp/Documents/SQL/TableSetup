@@ -3,7 +3,7 @@ KommuneID int NOT NULL PRIMARY KEY,
 Kommuner varchar (200)
 );
 
-INSERT INTO Kommuner(KommuneID)
+INSERT INTO Kommuner(KommuneID, Kommuner)
 VALUES (101, 'København'), (147, 'Frederiksberg'), (151, 'Ballerup'), (153, 'Brøndby'), (155, 'Dragør'), (157, 'Gentofte'), (159, 'Gladsaxe'), (161, 'Glostrup'), 
 (163, 'Herlev'), (165, 'Albertslund'), (167, 'Hvidovre'), (169, 'Høje-Taastrup'), (173, 'Lyngby-Taarbæk'), (175, 'Rødovre'), (183, 'Ishøj'), (185, 'Tårnby'), 
 (187, 'Vallensbæk'), (190, 'Furesø'), (201, 'Allerød'), (210, 'Fredensborg'), (217, 'Helsingør'), (219, 'Hillerød'), (223, 'Hørsholm'), (230, 'Rudersdal'), 
