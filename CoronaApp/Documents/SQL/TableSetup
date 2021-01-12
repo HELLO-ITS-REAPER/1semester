@@ -1,5 +1,5 @@
 CREATE TABLE Kommuner (
-KommuneID int NOT NULL PRIMARY KEY,
+KommuneID int NOT NULL IDENTITY (1,1) PRIMARY KEY,
 Kommuner varchar (200)
 );
 
