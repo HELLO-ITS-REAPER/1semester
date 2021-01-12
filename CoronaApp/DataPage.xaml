@@ -18,23 +18,23 @@
         <Button Name="ButtonClose" Click="CloseButton_Click" Content="X" 
                 FontSize="18" Foreground="white" HorizontalAlignment="Left" 
                 Margin="1074,10,0,0" VerticalAlignment="Top" Background="#B22931"
-                Width="54" Height="35"/>
+                Cursor="Hand" Width="54" Height="35"/>
         
         <Button x:Name="Minimized" Click="Minimized_Click" Content="-" 
                 FontSize="18" Foreground="white" HorizontalAlignment="Left" 
                 Margin="1013,10,0,0" VerticalAlignment="Top" 
-                Background="#B22931" Width="54" Height="35"/>
+                Cursor="Hand" Background="#B22931" Width="54" Height="35"/>
         
         <Button Name="TilbageButton" Content="Tilbage" HorizontalAlignment="Left" 
                 Margin="716,645,0,0" VerticalAlignment="Top" Foreground="white" 
                 Background="#B22931" Height="50" Width="180" FontSize="28"
-                Click="TilbageButton_Click"/>
+                Cursor="Hand" Click="TilbageButton_Click"/>
         
         <Button Name="AnbefalingerButton" Content="Anbefalinger" 
                 HorizontalAlignment="Left" Margin="926,645,0,0" 
                 VerticalAlignment="Top" Foreground="white" 
                 Background="#B22931" Height="50" Width="180" FontSize="28"
-                Click="AnbefalingerButton_Click"/>
+                Cursor="Hand" Click="AnbefalingerButton_Click"/>
         
         <!--Labels-->
         <Label HorizontalAlignment="Left" Margin="29,264,0,0" 
