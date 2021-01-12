@@ -49,6 +49,7 @@ namespace CoronaApp
         private void ToDataPage_Click(object sender, RoutedEventArgs e)
         {
             DataPage dataPage = new DataPage();
+            dataPage.MyVal = Kommunevalg.Text;
             dataPage.Show();
             this.Close();
         }
