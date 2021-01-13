@@ -4,29 +4,17 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using System.Collections.ObjectModel;
 
 namespace CoronaApp
 {
-    class OldDataRepository : Repository
+    class OldDataRepository
     {
-        protected SqlConnection connection = null;
-        public void Search()
-        {
-            try
-            {
-                SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents", connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error in OldDataRepository " + ex.Message);
-            }
-            finally
-            {
-                if (connection != null && connection.State == ConnectionState.Open) connection.Close();
-            }
-        }
+        public string KommuneID { get; set; }
+        public string AntalTestede { get; set; }
+        public string AntalBekræftedeCOVID19 { get; set; }
+        public string Befolkningstal { get; set; }
+        public string KumulativIncidens { get; set; }
+        public string Dato { get; set; }
     }
 }
