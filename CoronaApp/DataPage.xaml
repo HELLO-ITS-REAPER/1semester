@@ -63,7 +63,8 @@
         
         <DataGrid Margin="259,402,101,186" IsSynchronizedWithCurrentItem="True"
                   AutoGenerateColumns="True" HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch" Name="OldData"/>
+                  VerticalAlignment="Stretch" Name="OldData" CanUserAddRows="False"
+                  IsReadOnly="True"/>
         
         <!--TextBoxes-->
         <TextBox HorizontalAlignment="Left" Margin="29,147,0,0" 
