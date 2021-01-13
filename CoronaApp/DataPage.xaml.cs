@@ -74,7 +74,7 @@ namespace CoronaApp
             if (MyVal == "")
             {
                 KommuneNavnText.Clear();
-                this.KommuneNavnText.Text = "ingen Kommune valgt";
+                this.KommuneNavnText.Text = "Ingen Kommune valgt";
             }
             else
             {
