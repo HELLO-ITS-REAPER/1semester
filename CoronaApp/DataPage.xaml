@@ -84,7 +84,7 @@
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
                  FontSize="28" Foreground="#747474" BorderThickness="0" FontWeight="Bold"/>
         
-        <TextBox HorizontalAlignment="Left" x:Name="KunulativeText" 
+        <TextBox HorizontalAlignment="Left" x:Name="KumulativeText" 
                  IsReadOnly="True" Margin="846,321,0,0" Text="0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
                  FontSize="28" Foreground="#747474" BorderThickness="0" FontWeight="Bold"/>
