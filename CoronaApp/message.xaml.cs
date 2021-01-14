@@ -34,8 +34,7 @@ namespace CoronaApp
 
         private void TilbageButton_Click(object sender, RoutedEventArgs e)
         {
-            DataPage dataPage = new DataPage();
-            dataPage.Show();
+            
             this.Close();
         }
 
