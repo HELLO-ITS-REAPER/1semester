@@ -88,11 +88,53 @@ namespace CoronaApp
             set { myVal = value; }
 
         }
+        private string fileCSV;
+        public string FileCSV
+        {
+            get { return fileCSV; }
+            set { fileCSV = value; }
+
+        }
         private async void ShowKommune()
         {
             await System.Threading.Tasks.Task.Delay(100);
-            KommuneNavnText.Clear();
-            this.KommuneNavnText.Text += myVal;
+            if (MyVal == "")
+            {
+                KommuneNavnText.Clear();
+                this.KommuneNavnText.Text = "Ingen Kommune valgt";
+            }
+            else
+            {
+                KommuneNavnText.Clear();
+
+                this.KommuneNavnText.Text += myVal;
+                CSVdatareader();
+            }
+        }
+
+        private void CSVdatareader()
+        {
+            string linje = "";
+
+            string[] csvLines = File.ReadAllLines(fileCSV);
+            for (int i = 1; i < csvLines.Length; i++)
+            {
+                if (csvLines[i].Contains(myVal))
+                {
+                    linje = csvLines[i];
+                }
+
+
+
+            }
+
+            string[] rowdata = linje.Split(';');
+            this.TestedeText.Text = rowdata[2];
+            this.BekræftedeText.Text = rowdata[3];
+            this.BefolningstalText.Text = rowdata[4];
+            this.KumulativeText.Text = rowdata[5];
+
+            Console.ReadLine();
         }
 
         private void SQLViewer()

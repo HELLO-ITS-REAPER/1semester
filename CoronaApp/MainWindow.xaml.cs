@@ -22,6 +22,7 @@ namespace CoronaApp
         public MainWindow()
         {
             InitializeComponent();
+            
 
             municipalityNames = new string[] { "Albertslund", "Allerød", "Assens", "Ballerup", "Billund", "Bornholm", "Brøndby", "Brønderslev", 
                 "Christiansø", "Dragør", "Egedal", "Esbjerg", "Fanø", "Favrskov", "Faxe", "Fredensborg", "Fredericia", "Frederiksberg", 
@@ -52,6 +53,7 @@ namespace CoronaApp
             dataPage.MyVal = Kommunevalg.Text;
             dataPage.Show();
             this.Close();
+            dataPage.FileCSV = FileLocation.Text;
         }
 
         private void Minimized_Click(object sender, RoutedEventArgs e)
