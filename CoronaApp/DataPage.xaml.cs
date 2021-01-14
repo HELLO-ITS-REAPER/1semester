@@ -51,7 +51,7 @@ namespace CoronaApp
         {
             message message = new message();
             message.Show();
-            this.Close();
+
         }
 
         private string myVal;
