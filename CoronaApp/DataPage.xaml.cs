@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Configuration;
 using System.Windows;
+using System.Data.SqlClient;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -10,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 using System.IO;
 
 namespace CoronaApp
@@ -19,10 +22,34 @@ namespace CoronaApp
     /// </summary>
     public partial class DataPage : Window
     {
+        private List<OldDataRepository> list = new List<OldDataRepository>();
         public DataPage()
         {
             InitializeComponent();
             ShowKommune();
+            
+                SqlConnection connection = null;
+                try
+                {
+                    connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
+                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents", connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    list.Clear();
+                    while (reader.Read()) list.Add(new OldDataRepository { KommuneID = reader[0].ToString(), AntalTestede = reader[1].ToString(), AntalBekræftedeCOVID19 = reader[2].ToString(), Befolkningstal = reader[3].ToString(), KumulativIncidens = reader[4].ToString(), Dato = reader[5].ToString() });
+                    connection.Close();
+
+                    OldData.ItemsSource = list;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    if (connection != null) connection.Close();
+                }
+            
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -108,6 +135,31 @@ namespace CoronaApp
             this.KumulativeText.Text = rowdata[5];
 
             Console.ReadLine();
+        }
+
+        private void SQLViewer()
+        {
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
+                SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents", connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                list.Clear();
+                while (reader.Read()) list.Add(new OldDataRepository { KommuneID = reader[0].ToString(), AntalTestede = reader[1].ToString(), AntalBekræftedeCOVID19 = reader[2].ToString(), Befolkningstal = reader[3].ToString(), KumulativIncidens = reader[4].ToString(), Dato = reader[5].ToString() });
+                connection.Close();
+
+                OldData.ItemsSource = list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null) connection.Close();
+            }
         }
     }
 }
