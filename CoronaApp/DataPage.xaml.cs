@@ -142,14 +142,15 @@ namespace CoronaApp
 
         }
 
-        message Message = new message();
 
 
         private void AnbefalingerButton_Click(object sender, RoutedEventArgs e)
         {
+            message Message = new message();
+
             string municipality = municipalityID;
             Message.KumulativTransfer = kumulative;
-            Message.MunicipalityNm = municipality;
+            Message.MunicipalityID = municipality;
             Message.Show();
 
         }

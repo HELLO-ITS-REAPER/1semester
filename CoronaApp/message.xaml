@@ -26,8 +26,7 @@
                                     Binding="{Binding Restriktioner}"/>
                 <DataGridTextColumn Header="Beskrivelser"
                                     Width="460" Binding="{Binding Beskrivelser}"/>
-                <DataGridTextColumn Header="Kumulative incidenstal" Width="200"
-                                    Binding="{Binding KumulativeIncidenstal}"/>
+                
                 <DataGridTextColumn Header="Restriktions dato" Width="160"
                                     Binding="{Binding RestriktionsDato}"/>
             </DataGrid.Columns>

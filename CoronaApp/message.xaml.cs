@@ -27,11 +27,11 @@ namespace CoronaApp
             set { kumulativTransfer = value; }
 
         }
-        private string municipalityNm;
-        public string MunicipalityNm
+        private string municipalityID;
+        public string MunicipalityID
         {
-            get { return municipalityNm; }
-            set { municipalityNm = value; }
+            get { return municipalityID; }
+            set { municipalityID = value; }
         }
         private List<RestrictionsData> list = new List<RestrictionsData>();
         public message()
@@ -45,7 +45,7 @@ namespace CoronaApp
 
         private async void SQLMessage()
         {
-            await System.Threading.Tasks.Task.Delay(3000);
+            await System.Threading.Tasks.Task.Delay(300);
             //decimal kumulativtal = decimal.Parse(kumulativTransfer);
             var kumulativtal = decimal.Parse(kumulativTransfer, new System.Globalization.NumberFormatInfo() { NumberDecimalSeparator = "." });
             if (kumulativtal > 10)
@@ -55,18 +55,18 @@ namespace CoronaApp
 
                 kumulativtal = decimal.Parse(Kumulativtal, new System.Globalization.NumberFormatInfo() { NumberDecimalSeparator = "." });
             }
-
+            
             SqlConnection connection = null;
             try
             {
                 if (kumulativtal >= 0.1m && kumulativtal < 1)
                 {
                     connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
-                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '1' AND Municipality_id = " + municipalityNm + "", connection);
+                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '1' AND Municipality_id = " + municipalityID + "", connection);
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     list.Clear();
-                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), KumulativeIncidenstal = reader[3].ToString(), RestriktionsDato = reader[4].ToString() });
+                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), RestriktionsDato = reader[3].ToString() });
                     connection.Close();
 
                     AnbefalingsData.ItemsSource = list;
@@ -74,11 +74,11 @@ namespace CoronaApp
                 else if (kumulativtal >= 1 && kumulativtal < 2)
                 {
                     connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
-                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '2' AND Municipality_id = " + municipalityNm + "", connection);
+                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '2' AND Municipality_id = " + municipalityID + "", connection);
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     list.Clear();
-                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), KumulativeIncidenstal = reader[3].ToString(), RestriktionsDato = reader[4].ToString() });
+                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), RestriktionsDato = reader[3].ToString() });
                     connection.Close();
 
                     AnbefalingsData.ItemsSource = list;
@@ -86,11 +86,11 @@ namespace CoronaApp
                 else if (kumulativtal >= 2 && kumulativtal < 3)
                 {
                     connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
-                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '3' AND Municipality_id = " + municipalityNm + "", connection);
+                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '3' AND Municipality_id = " + municipalityID + "", connection);
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     list.Clear();
-                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), KumulativeIncidenstal = reader[3].ToString(), RestriktionsDato = reader[4].ToString() });
+                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), RestriktionsDato = reader[3].ToString() });
                     connection.Close();
 
                     AnbefalingsData.ItemsSource = list;
@@ -98,11 +98,11 @@ namespace CoronaApp
                 else if (kumulativtal >= 3 && kumulativtal < 4)
                 {
                     connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
-                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '4'  AND Municipality_id = " + municipalityNm + "", connection);
+                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '4'  AND Municipality_id = " + municipalityID + "", connection);
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     list.Clear();
-                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), KumulativeIncidenstal = reader[3].ToString(), RestriktionsDato = reader[4].ToString() });
+                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), RestriktionsDato = reader[3].ToString() });
                     connection.Close();
 
                     AnbefalingsData.ItemsSource = list;
@@ -110,11 +110,11 @@ namespace CoronaApp
                 else if (kumulativtal >= 4)
                 {
                     connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
-                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '5'  AND Municipality_id = " + municipalityNm + "", connection);
+                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Restrictions WHERE Risikoniveau = '5'  AND Municipality_id = " + municipalityID + "", connection);
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     list.Clear();
-                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), KumulativeIncidenstal = reader[3].ToString(), RestriktionsDato = reader[4].ToString() });
+                    while (reader.Read()) list.Add(new RestrictionsData { Risikoniveau = reader[0].ToString(), Restriktioner = reader[1].ToString(), Beskrivelser = reader[2].ToString(), RestriktionsDato = reader[3].ToString() });
                     connection.Close();
 
                     AnbefalingsData.ItemsSource = list;
