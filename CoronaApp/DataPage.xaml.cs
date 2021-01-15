@@ -26,30 +26,29 @@ namespace CoronaApp
         public DataPage()
         {
             InitializeComponent();
-            
-            
-                SqlConnection connection = null;
-                try
-                {
-                    connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
-                    SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents", connection);
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    list.Clear();
-                    while (reader.Read()) list.Add(new OldDataRepository { KommuneID = reader[0].ToString(), AntalTestede = reader[1].ToString(), AntalBekræftedeCOVID19 = reader[2].ToString(), Befolkningstal = reader[3].ToString(), KumulativIncidens = reader[4].ToString(), Dato = reader[5].ToString() });
-                    connection.Close();
-
-                    OldData.ItemsSource = list;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    if (connection != null) connection.Close();
-                }
             ShowKommune();
+
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
+                SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents", connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                list.Clear();
+                while (reader.Read()) list.Add(new OldDataRepository { KommuneID = reader[0].ToString(), AntalTestede = reader[1].ToString(), AntalBekræftedeCOVID19 = reader[2].ToString(), Befolkningstal = reader[3].ToString(), KumulativIncidens = reader[4].ToString(), Dato = reader[5].ToString() });
+                connection.Close();
+
+                OldData.ItemsSource = list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null) connection.Close();
+            }
 
         }
 
@@ -75,12 +74,6 @@ namespace CoronaApp
             this.Close();
         }
 
-        private void AnbefalingerButton_Click(object sender, RoutedEventArgs e)
-        {
-            message message = new message();
-            message.Show();
-
-        }
 
         private string myVal;
         public string MyVal
@@ -89,13 +82,38 @@ namespace CoronaApp
             set { myVal = value; }
 
         }
-        private string fileCSV;
-        public string FileCSV
-        {
-            get { return fileCSV; }
-            set { fileCSV = value; }
 
+        private string testede;
+        public string Testede
+        {
+            get { return testede; }
+            set { testede = value; }
         }
+        private string bekræftede;
+        public string Bekræftede
+        {
+            get { return bekræftede; }
+            set { bekræftede = value; }
+        }
+        private string kumulative;
+        public string Kumulative
+        {
+            get { return kumulative; }
+            set { kumulative = value; }
+        }
+        private string befolningstal;
+        public string Befolningstal
+        {
+            get { return befolningstal; }
+            set { befolningstal = value; }
+        }
+        private string municipalityID;
+        public string MnicipalityID
+        {
+            get { return municipalityID; }
+            set { municipalityID = value; }
+        }
+
         private async void ShowKommune()
         {
             await System.Threading.Tasks.Task.Delay(100);
@@ -103,39 +121,37 @@ namespace CoronaApp
             {
                 KommuneNavnText.Clear();
                 this.KommuneNavnText.Text = "Ingen Kommune valgt";
+                TestedeText.Clear();
+
+
+
             }
             else
             {
                 KommuneNavnText.Clear();
 
                 this.KommuneNavnText.Text += myVal;
-                CSVdatareader();
             }
+            this.TestedeText.Text = testede;
+            BekræftedeText.Clear();
+            this.BekræftedeText.Text = bekræftede;
+            KumulativeText.Clear();
+            this.KumulativeText.Text = kumulative;
+            BefolningstalText.Clear();
+            this.BefolningstalText.Text = befolningstal;
+
         }
 
-        private void CSVdatareader()
+        message Message = new message();
+
+
+        private void AnbefalingerButton_Click(object sender, RoutedEventArgs e)
         {
-            string linje = "";
+            string municipality = municipalityID;
+            Message.KumulativTransfer = kumulative;
+            Message.MunicipalityNm = municipality;
+            Message.Show();
 
-            string[] csvLines = File.ReadAllLines(fileCSV);
-            for (int i = 1; i < csvLines.Length; i++)
-            {
-                if (csvLines[i].Contains(myVal))
-                {
-                    linje = csvLines[i];
-                }
-
-
-
-            }
-
-            string[] rowdata = linje.Split(';');
-            this.TestedeText.Text = rowdata[2];
-            this.BekræftedeText.Text = rowdata[3];
-            this.BefolningstalText.Text = rowdata[4];
-            this.KumulativeText.Text = rowdata[5];
-
-            Console.ReadLine();
         }
 
         private void SQLViewer()

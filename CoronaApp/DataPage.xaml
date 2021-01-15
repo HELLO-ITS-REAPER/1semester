@@ -26,7 +26,7 @@
                 Cursor="Hand" Background="#B22931" Width="54" Height="35"/>
 
         <Button Name="TilbageButton" Content="Tilbage" HorizontalAlignment="Left" 
-                Margin="716,645,0,0" VerticalAlignment="Top" Foreground="white" 
+                Margin="726,645,0,0" VerticalAlignment="Top" Foreground="white" 
                 Background="#B22931" Height="50" Width="180" FontSize="28"
                 Cursor="Hand" Click="TilbageButton_Click"/>
 
@@ -63,7 +63,7 @@
 
         <DataGrid x:Name="OldData" AutoGenerateColumns="False"
                   CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single"
-                  Margin="220,400,10,176" FontSize="18">
+                  Margin="220,400,10,176" FontSize="18" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Kommune ID" Width="120"
                                     Binding="{Binding KommuneID}"/>
@@ -100,10 +100,11 @@
                  IsReadOnly="True" Margin="575,321,0,0" Text="0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
                  FontSize="28" Foreground="#747474" BorderThickness="0" FontWeight="Bold"/>
-        
+
         <TextBox HorizontalAlignment="Left" x:Name="KumulativeText" 
                  IsReadOnly="True" Margin="846,321,0,0" Text="0" 
                  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
                  FontSize="28" Foreground="#747474" BorderThickness="0" FontWeight="Bold"/>
+
     </Grid>
 </Window>
