@@ -50,9 +50,11 @@ namespace CoronaApp
         }
 
         private void ToDataPage_Click(object sender, RoutedEventArgs e)
-        {
-            CSVdatareader();
-            this.Close();
+        {  
+           
+                CSVdatareader();
+                this.Close();
+            
         }
 
         private void CSVdatareader()
@@ -78,7 +80,6 @@ namespace CoronaApp
             dataPage.Testede = rowdata[2];
             dataPage.Bekræftede = rowdata[3];
             dataPage.Kumulative = rowdata[5];
-            //Message.Kumulativ = rowdata[5];
             dataPage.Befolningstal = rowdata[4];
             dataPage.Show();
             dataPage.MyVal = Kommunevalg.Text;
