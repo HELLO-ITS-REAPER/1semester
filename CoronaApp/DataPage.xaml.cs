@@ -26,7 +26,7 @@ namespace CoronaApp
         public DataPage()
         {
             InitializeComponent();
-            ShowKommune();
+            
             
                 SqlConnection connection = null;
                 try
@@ -49,7 +49,8 @@ namespace CoronaApp
                 {
                     if (connection != null) connection.Close();
                 }
-            
+            ShowKommune();
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
