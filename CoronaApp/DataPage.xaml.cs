@@ -27,34 +27,6 @@ namespace CoronaApp
         {
             InitializeComponent();
             ShowKommune();
-
-            SqlConnection connection = null;
-            try
-            {
-                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
-                SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents", connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                list.Clear();
-                while (reader.Read()) list.Add(new OldDataRepository { KommuneID = reader[0].ToString(), AntalTestede = reader[1].ToString(), AntalBekræftedeCOVID19 = reader[2].ToString(), Befolkningstal = reader[3].ToString(), KumulativIncidens = reader[4].ToString(), Dato = reader[5].ToString() });
-                connection.Close();
-
-                OldData.ItemsSource = list;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (connection != null) connection.Close();
-            }
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -122,9 +94,6 @@ namespace CoronaApp
                 KommuneNavnText.Clear();
                 this.KommuneNavnText.Text = "Ingen Kommune valgt";
                 TestedeText.Clear();
-
-
-
             }
             else
             {
@@ -139,7 +108,7 @@ namespace CoronaApp
             this.KumulativeText.Text = kumulative;
             BefolningstalText.Clear();
             this.BefolningstalText.Text = befolningstal;
-
+            DataFilter();
         }
 
 
@@ -162,6 +131,31 @@ namespace CoronaApp
             {
                 connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
                 SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents", connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                list.Clear();
+                while (reader.Read()) list.Add(new OldDataRepository { KommuneID = reader[0].ToString(), AntalTestede = reader[1].ToString(), AntalBekræftedeCOVID19 = reader[2].ToString(), Befolkningstal = reader[3].ToString(), KumulativIncidens = reader[4].ToString(), Dato = reader[5].ToString() });
+                connection.Close();
+
+                OldData.ItemsSource = list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null) connection.Close();
+            }
+        }
+
+        private void DataFilter()
+        {
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringDelta"].ConnectionString);
+                SqlCommand command = new SqlCommand("SELECT * FROM dbo.Cumulative_incidents WHERE Municipality_name = '" + KommuneNavnText.Text + "'", connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 list.Clear();

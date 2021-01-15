@@ -157,8 +157,8 @@ namespace CoronaApp
             // Indsæt anvendelses code her, så der bliver filtreret for smittede kommuner.
 
 
-            DataPage dataPage = new DataPage();
-            dataPage.Show();
+            MainWindow MainWindow = new MainWindow();
+            MainWindow.Show();
             this.Close();
         }
     }
