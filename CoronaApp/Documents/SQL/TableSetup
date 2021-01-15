@@ -1,16 +1,16 @@
-CREATE TABLE Kommuner (
-KommuneID int NOT NULL PRIMARY KEY,
-Kommuner varchar (98) NOT NULL
+CREATE TABLE Municipalities (
+M_id int NOT NULL PRIMARY KEY,
+M_name varchar (98) NOT NULL
 );
 
-INSERT INTO dbo.Kommuner(KommuneID)
+INSERT INTO dbo.Municipalities(M_id)
 VALUES 
 (101), (147), (151), (153), (155), (157), (159), (161), (163), (165), (167), (169), (173), (175), (183), (185), (187), (190), (201), (210), (217), (219), (223), (230), (240), 
 (250), (253), (259), (260), (265), (269), (270), (306), (316), (320), (326), (329), (330), (336), (340), (350), (360), (370), (376), (390), (400), (410), (411), (420), (430), (440), 
 (450), (461), (479), (480), (482), (492), (510), (530), (540), (550), (561), (563), (573), (575), (580), (607), (615), (621), (630), (657), (661), (665), (671), (706), (707), (710), 
 (727), (730), (740), (741), (746), (751), (756), (760), (766), (773), (779), (787), (791), (810), (813), (820), (825), (840), (846), (849), (851), (860);
 
-INSERT INTO Kommuner (Kommuner) 
+INSERT INTO dbo.Municipalities (M_name) 
 VALUES ('København'), ('Frederiksberg'), ('Ballerup'), ('Brøndby'), ('Dragør'), ('Gentofte'), ('Gladsaxe'), ('Glostrup'), ('Herlev'), ('Albertslund'), ('Hvidovre'), 
 ('Høje-Taastrup'), ('Lyngby-Taarbæk'), ('Rødovre'), ('Ishøj'), ('Tårnby'), ('Vallensbæk'), ('Furesø'), ('Allerød'), ('Fredensborg'), ('Helsingør'), ('Hillerød'), 
 ('Hørsholm'), ('Rudersdal'), ('Egedal'), ('Frederikssund'), ('Greve'), ('Køge'), ('Halsnæs'), ('Roskilde'), ('Solrød'), ('Gribskov'), ('Odsherred'), ('Holbæk'), ('Faxe'), 
@@ -23,3 +23,6 @@ VALUES ('København'), ('Frederiksberg'), ('Ballerup'), ('Brøndby'), ('Dragør'
 
 ALTER TABLE dbo.RestrictionSektor
 ADD R_S_id int IDENTITY (1,1) NOT NULL PRIMARY KEY;
+
+ALTER TABLE RestrictionSektor
+ADD CONSTRAINT RS PRIMARY KEY (S_codes, Risikoniveau, R_titel);
