@@ -121,7 +121,7 @@ namespace CoronaApp
             Message.KumulativTransfer = kumulative;
             Message.MunicipalityID = municipality;
             Message.Show();
-
+            this.Close();
         }
 
         private void SQLViewer()

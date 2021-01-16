@@ -148,7 +148,8 @@ namespace CoronaApp
 
         private void TilbageButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 
@@ -159,6 +160,7 @@ namespace CoronaApp
 
             MainWindow MainWindow = new MainWindow();
             MainWindow.Show();
+            
             this.Close();
         }
     }
