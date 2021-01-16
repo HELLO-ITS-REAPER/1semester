@@ -50,11 +50,19 @@ namespace CoronaApp
         }
 
         private void ToDataPage_Click(object sender, RoutedEventArgs e)
-        {  
-           
+        {
+            try
+            {
+
+
                 CSVdatareader();
                 this.Close();
-            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void CSVdatareader()
