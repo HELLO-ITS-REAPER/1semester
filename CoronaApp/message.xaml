@@ -1,0 +1,35 @@
+﻿<Window x:Class="CoronaApp.message"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoronaApp"
+        mc:Ignorable="d"
+              Height="800" Width="1138" Background="White" 
+        Title="message" WindowStyle="None" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Name="ButtonClose" Click="CloseButton_Click" Cursor="Hand" Content="X" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1074,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
+        <Button x:Name="Minimized" Click="Minimized_Click" Cursor="Hand" Content="-" FontSize="18" Foreground="white" HorizontalAlignment="Left" Margin="1013,10,0,0" VerticalAlignment="Top" Background="#B22931" Width="54" Height="35"/>
+        <Image Source="/Coronavirus.jpg" Width="430" Height="89.5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="10,157,0,0" Content="Anbefalinger" FontWeight="Bold" VerticalAlignment="Top" Width="220"  FontSize="34" Foreground="#B22931"/>
+
+
+        <Button Name="TilbageButton" Content="Tilbage" Cursor="Hand" HorizontalAlignment="Left" Margin="716,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180" FontSize="28" Click="TilbageButton_Click" />
+        <Button Name="AnvendButton" Content="Færdig" Cursor="Hand" HorizontalAlignment="Left" Margin="926,645,0,0" VerticalAlignment="Top" Foreground="white" Background="#B22931" Height="50" Width="180"  FontSize="28" Click="AnvendButton_Click"/>
+        <DataGrid x:Name="AnbefalingsData" AutoGenerateColumns="False"
+                  CanUserAddRows="False" IsReadOnly="True" SelectionMode="Single"
+                  Margin="10,231,10,180" FontSize="18">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Risikoniveau" Width="120"
+                                    Binding="{Binding Risikoniveau}"/>
+                <DataGridTextColumn Header="Restriktioner" Width="320"
+                                    Binding="{Binding Restriktioner}"/>
+                <DataGridTextColumn Header="Beskrivelser"
+                                    Width="460" Binding="{Binding Beskrivelser}"/>
+
+                <DataGridTextColumn Header="Restriktions dato" Width="220"
+                                    Binding="{Binding RestriktionsDato}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
