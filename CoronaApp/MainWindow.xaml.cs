@@ -90,7 +90,7 @@ namespace CoronaApp
             dataPage.Kumulative = rowdata[5];
             dataPage.Befolningstal = rowdata[4];
             dataPage.Show();
-            dataPage.MyVal = Kommunevalg.Text;
+            dataPage.KommuneNavn = Kommunevalg.Text;
 
 
 
