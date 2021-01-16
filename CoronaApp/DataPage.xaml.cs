@@ -47,11 +47,11 @@ namespace CoronaApp
         }
 
 
-        private string myVal;
-        public string MyVal
+        private string kommuneNavn;
+        public string KommuneNavn
         {
-            get { return myVal; }
-            set { myVal = value; }
+            get { return kommuneNavn; }
+            set { kommuneNavn = value; }
 
         }
 
@@ -89,7 +89,7 @@ namespace CoronaApp
         private async void ShowKommune()
         {
             await System.Threading.Tasks.Task.Delay(100);
-            if (MyVal == "")
+            if (KommuneNavn == "")
             {
                 KommuneNavnText.Clear();
                 this.KommuneNavnText.Text = "Ingen Kommune valgt";
@@ -99,7 +99,7 @@ namespace CoronaApp
             {
                 KommuneNavnText.Clear();
 
-                this.KommuneNavnText.Text += myVal;
+                this.KommuneNavnText.Text += kommuneNavn;
             }
             this.TestedeText.Text = testede;
             BekræftedeText.Clear();
