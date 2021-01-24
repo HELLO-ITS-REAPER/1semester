@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CoronaApp.App" Collapsed="true">
+    <Position X="4.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoronaApp.DataPage" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAhCgAAAAAAACAAAQAiAAAAMAEBCAAJAAAAAACAA=</HashCode>
+      <FileName>DataPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.158" Collapsed="true" />
+  </Class>
+  <Class Name="CoronaApp.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAgAAAAAAAAQAAAAAAAACAAACAAAAAIAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CoronaApp.message" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAhgAAAAQAAAAAAAQACAAAAAgAACAAEAAAABAAAA=</HashCode>
+      <FileName>message.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CoronaApp.OldDataRepository">
+    <Position X="6.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAIgAA=</HashCode>
+      <FileName>OldDataRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoronaApp.Repository">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoronaApp.RestrictionsData">
+    <Position X="4.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAIAAAAgAQAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RestrictionsData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
